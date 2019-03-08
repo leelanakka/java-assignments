@@ -1,0 +1,28 @@
+package com.step.assignments;
+
+public class FlourPacker {
+    public static void main(String[] args) {
+        System.out.println(canPack(1, 0, 4));
+        System.out.println(canPack(1, 0, 5));
+        System.out.println(canPack(0, 5, 4));
+        System.out.println(canPack(0, 5, 6));
+        System.out.println(canPack(2, 7, 18));
+    }
+
+    public static boolean canPack(int bigCount, int smallCount, int goal) {
+        if (bigCount < 0 || smallCount < 0 || goal < 0) {
+            return false;
+        }
+        int usedBigCount = 0;
+        if (bigCount > 0) {
+            usedBigCount = goal / 5;
+            if(usedBigCount > bigCount){
+                usedBigCount = bigCount;
+            }
+        }
+        if (usedBigCount * 5 + smallCount >= goal) {
+            return true;
+        }
+        return false;
+    }
+}
