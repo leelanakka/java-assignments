@@ -1,5 +1,7 @@
 package com.step.assignments.arrays;
 
+import org.jetbrains.annotations.Contract;
+
 public class SortingInDescendingOrder {
 
     public static void main(String[] args) {
@@ -9,6 +11,7 @@ public class SortingInDescendingOrder {
         }
     }
 
+    @Contract(pure = true)
     public static int[] sortArray(int[] array) {
         int[] sortedArray = new int[array.length];
         for (int i = 0; i < sortedArray.length; i++) {
