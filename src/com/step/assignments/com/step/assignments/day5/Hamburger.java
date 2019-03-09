@@ -3,7 +3,7 @@ package com.step.assignments.com.step.assignments.day5;
 public class Hamburger {
     private String rollType;
     private String meat;
-    private double price = 50;
+    private double price;
     private String name;
     private String firstType;
     private String secondType;

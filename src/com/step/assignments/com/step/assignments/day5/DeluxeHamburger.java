@@ -9,22 +9,22 @@ public class DeluxeHamburger extends Hamburger {
 
     @Override
     public void setFirstType(String firstType, double price) {
-        System.out.println("sorry you can't new items");
+        System.out.println("sorry you can't add new items");
     }
 
     @Override
     public void setSecondType(String secondType, double price) {
-        System.out.println("sorry you can't new items");
+        System.out.println("sorry you can't add new items");
     }
 
     @Override
     public void setThirdType(String thirdType, double price) {
-        System.out.println("sorry you can't new items");
+        System.out.println("sorry you can't add new items");
     }
 
     @Override
     public void setFourthType(String fourthType, double price) {
-        System.out.println("sorry you can't new items");
+        System.out.println("sorry you can't add new items");
     }
 }
 
