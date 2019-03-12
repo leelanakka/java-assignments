@@ -3,7 +3,7 @@ package com.step.assignments.generics;
 public class Main {
 
     public static void main(String[] args) {
-        
+
         System.out.println("*********** printing cricket teams ****************");
         FootBallTeam indXiF = new FootBallTeam("IND XI F", 1, -2, 0);
         indXiF.wonTheMatch();
