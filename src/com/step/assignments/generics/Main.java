@@ -1,21 +1,10 @@
 package com.step.assignments.generics;
 
-import java.util.Arrays;
-
-import static java.util.Arrays.asList;
-import static java.util.Arrays.sort;
-
 public class Main {
 
     public static void main(String[] args) {
-
-        CricketTeam indXiC = new CricketTeam("IND XI C", 2, 0, 1);
-        CricketTeam ausXiC = new CricketTeam("AUS XI C", 2, 0, 1);
-        CricketTeam rsaXiC = new CricketTeam("RSA XI C", 2, 0, 1);
-
-
-
-        System.out.println("*********** printing cricket teamsn ****************");
+        
+        System.out.println("*********** printing cricket teams ****************");
         FootBallTeam indXiF = new FootBallTeam("IND XI F", 1, -2, 0);
         indXiF.wonTheMatch();
         indXiF.wonTheMatch();
@@ -31,7 +20,6 @@ public class Main {
         rsaXiF.wonTheMatch();
         rsaXiF.wonTheMatch();
         rsaXiF.drawTheMatch();
-
 
 
         CricketTeam legends = new CricketTeam("legends", 2, 0, 1);
