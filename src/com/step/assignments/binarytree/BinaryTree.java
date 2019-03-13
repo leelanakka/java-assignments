@@ -4,24 +4,21 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class BinaryTree {
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
-    public static void main(String[] args) {
-        int[] list = {1,4};
-        BinaryTree binaryTree = new BinaryTree(3);
-        Object values = binaryTree.finalBinaryTree(list);
-        String output =  values.toString();
-        System.out.println(output);
-    }
-
     Map<String, BinaryTree> tree = new HashMap<String, BinaryTree>();
     private int node;
 
     public BinaryTree(int node) {
         this.node = node;
+    }
+
+    public static void main(String[] args) {
+        int[] list = {1, 4, 2, 3, 9, 10, -1, -1};
+        BinaryTree binaryTree = new BinaryTree(3);
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
     }
 
     public String selectBranch(int number) {
@@ -30,10 +27,13 @@ public class BinaryTree {
 
     public Map insert(int number) {
         String branch = this.selectBranch(number);
+        System.out.println(tree.get(branch));
         if (tree.get(branch) == null) {
             tree.put(branch, new BinaryTree(number));
+            System.out.println("branch is " + branch + "number is  " + number);
             return tree;
         }
+        System.out.println("branch is " + branch + " and number is  " + number);
         tree.get(branch).insert(number);
         return tree;
     }
