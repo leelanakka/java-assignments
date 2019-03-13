@@ -1,10 +1,8 @@
 package com.step.assignments.binarytree;
 
-import java.util.HashMap;
-import java.util.Map;
-
 public class BinaryTree {
-    Map<String, BinaryTree> tree = new HashMap<String, BinaryTree>();
+    private BinaryTree left;
+    private BinaryTree right;
     private int node;
 
     public BinaryTree(int node) {
@@ -12,37 +10,51 @@ public class BinaryTree {
     }
 
     public static void main(String[] args) {
-        int[] list = {1, 4, 2, 3, 9, 10, -1, -1};
+        int[] list = {1, 4, 2, 3, 9, 10, -1};
         BinaryTree binaryTree = new BinaryTree(3);
+        binaryTree.finalBinaryTree(list);
+        System.out.println(binaryTree.finalBinaryTree(list));
     }
 
     @Override
     public String toString() {
-        return super.toString();
+        return "BinaryTree{\n" +
+                "\n node=" + node +
+                "\nleft=" + left +
+                ", \nright=" + right +
+                '}';
     }
 
     public String selectBranch(int number) {
         return number < this.node ? "left" : "right";
     }
 
-    public Map insert(int number) {
+    public void insert(int number) {
+        System.out.println(number);
         String branch = this.selectBranch(number);
-        System.out.println(tree.get(branch));
-        if (tree.get(branch) == null) {
-            tree.put(branch, new BinaryTree(number));
-            System.out.println("branch is " + branch + "number is  " + number);
-            return tree;
+        if (this.left == null && branch.equals("left")) {
+            this.left = new BinaryTree(number);
+            return;
         }
-        System.out.println("branch is " + branch + " and number is  " + number);
-        tree.get(branch).insert(number);
-        return tree;
+
+        if (this.right == null && branch.equals("right")) {
+            this.right = new BinaryTree(number);
+            return;
+        }
+        if (branch.equals("left")) {
+            this.left.insert(number);
+            return;
+        }
+
+        this.right.insert(number);
+        return;
     }
 
 
-    public Map finalBinaryTree(int[] numbers) {
+    public BinaryTree finalBinaryTree(int[] numbers) {
         for (int i = 0; i < numbers.length; i++) {
             this.insert(numbers[i]);
         }
-        return tree;
+        return this;
     }
 }
