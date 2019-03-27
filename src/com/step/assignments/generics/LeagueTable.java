@@ -2,27 +2,27 @@ package com.step.assignments.generics;
 
 import java.util.ArrayList;
 
-public class LeagueTable<T> {
+class LeagueTable<T> {
 
     private ArrayList<T> teams;
 
-    public LeagueTable() {
+    LeagueTable() {
         this.teams = new ArrayList<T>();
     }
 
-    public void addTeams(T team) {
+    void addTeams(T team) {
         this.teams.add(team);
     }
 
-    public void printTeams() {
+    void printTeams() {
         this.sortArray();
-        for (int i = 0; i < this.teams.size(); i++) {
-            Team team = (Team) this.teams.get(i);
+        for (T team1 : this.teams) {
+            Team team = (Team) team1;
             System.out.println(team.getTeamName());
         }
     }
 
-    public ArrayList sortArray() {
+    private ArrayList sortArray() {
 
         for (int i = 0; i < teams.size() - 1; i++)
             for (int j = i + 1; j < teams.size(); j++) {
