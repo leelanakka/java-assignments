@@ -9,7 +9,7 @@ class CuboidTest {
     @Test
     void getHeight() {
         Cuboid cuboid = new Cuboid(5, 10, 15);
-        assertEquals(5,cuboid.getHeight());
+        assertEquals(15,cuboid.getHeight());
     }
 
     @Test
